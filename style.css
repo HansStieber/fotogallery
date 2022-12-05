@@ -1,0 +1,261 @@
+/*----------Styling des Bodys----------*/
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+h1 {
+    margin: 12px 0 0 30px;
+    font-size: 24px;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+.hide {
+    display: none !important;
+}
+
+
+/*----------Styling des Menüs----------*/
+
+.menu {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: white;
+    border-right: 1px solid lightgray;
+    color: rgb(60, 64, 67);
+}
+
+.menu-button {
+    display: none;
+}
+
+.close-menu {
+    z-index: 200;
+    position: absolute;
+    left: 170px;
+    top: 250px;
+    width: 10px;
+    object-fit: contain;
+    filter: invert(1);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    color: rgb(60, 64, 67);
+    width: 140px;
+    border-bottom-right-radius: 18px;
+    border-top-right-radius: 18px;
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+}
+
+.current-page {
+    color: #D02828;
+    background-color: #ffd9d9;
+}
+
+nav a:hover {
+    background-color: rgb(244, 244, 244);
+}
+
+.current-page:hover {
+    background-color: #ffc8c8;
+}
+
+nav img {
+    height: 20px;
+    object-fit: contain;
+    margin-right: 14px;
+}
+
+.sub-nav {
+    font-size: 12px;
+}
+
+
+
+@media (max-width: 767.9px) {
+
+    .menu {
+        transform: translateX(-201px);
+        transition: all 225ms ease-in-out;
+    }
+
+    .menu-translateX {
+        transform: translateX(0);
+        transition: all 225ms ease-in-out;
+    }
+
+    .menu-button {
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        width: 25px;
+        object-fit: contain;
+        display: unset;
+    }
+}
+
+
+/*----------Styling der Gallerie----------*/
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    position: absolute;
+    left: 200px;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    margin: 20px;
+}
+
+.gallery::after {
+    content: "";
+    flex-grow: 999;
+}
+
+.img-box {
+    position: relative;
+    flex: 1 1 auto;
+    height: 250px;
+}
+
+.img-box img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.img-box img:hover {
+    filter: contrast(60%);
+    transform: scale(1.01);
+    transition: all 125ms ease-in-out;
+}
+
+@media (max-width: 767.9px) {
+
+    .gallery {
+        left: 40px;
+        margin: 5px;
+    }
+
+    .img-box {
+        height: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .gallery {
+        left: 40px;
+        margin: 10px;
+    }
+}
+
+
+/*----------Styling der Alben-Vorschau----------*/
+
+.gallery-preview {
+    height: 180px;
+    width: 180px;
+    background-color: rgb(215, 215, 215);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.gallery-preview:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 125ms ease-in-out;
+}
+
+.gallery-preview img {
+    height: 100%;
+    object-fit: cover;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 505px) {
+
+    .galleries {
+        flex-direction: column !important;
+    }
+}
+
+
+/*----------Styling des Vollbildmodus----------*/
+
+.full-screen {
+    background-color: black;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-full-screen {
+    object-fit: cover;
+    max-height: 100vh;
+    max-width: 100vw;
+    cursor: default !important;
+}
+
+.arrow-left {
+    position: absolute;
+    left: 0;
+    top: 49vh;
+    width: 35px;
+    object-fit: contain;
+    padding-left: 5px;
+}
+
+.arrow-right {
+    position: absolute;
+    right: 0;
+    top: 49vh;
+    width: 35px;
+    object-fit: contain;
+    padding-right: 5px;
+}
+
+.x {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 35px;
+    object-fit: contain;
+    padding: 15px;
+}
+
+.arrow-left:hover, .arrow-right:hover, .x:hover {
+    transform: scale(1.1);
+    transition: all 125ms ease-in-out;
+}
